@@ -1,96 +1,150 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="generator" content="Hugo 0.88.1" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href=""https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
-	<link rel="stylesheet" href="../css/custom.css">
-	<link rel="stylesheet" href="../css/normalize.css">
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/normalize.css">
 
-	<title>MiniGAN</title>
-	<link href="../css/bootstrap.min.css" rel="stylesheet">
+    <title>MiniGAN</title>
 
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        h2 {
+            font-size: 2em;
+        }
+
+        h3 {
+            font-size: 1.5em;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        table {
+            margin-top: 20px;
+        }
+
+        audio {
+            width: 140px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .bg-white {
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 
-<body data-new-gr-c-s-check-loaded="14.1091.0" data-gr-ext-installed="">
+<body>
+    <div class="container">
+        <header role="banner">
+            <h1>MiniGAN</h1>
+            <h3>Towards an Efficient and Accurate Speech Enhancement by a Comprehensive Ablation Study</h3>
+            <p>Paper: <a href="link">link</a></p>
+        </header>
 
-<div class="container" >
-<header role="banner">
-</header>
-<main role="main">
-<article itemscope itemtype="https://schema.org/BlogPosting">
+        <main role="main">
+            <article itemscope itemtype="https://schema.org/BlogPosting">
+                <div class="bg-white">
+                    <p><b>Abstract.</b> In recent years, significant advancements in speech enhancement have been made through phase reconstruction, dual-branch methodologies, or attention mechanisms. These methods produce exceptional results but at the expense of a high computational budget. This work aims to enhance the efficiency of the MP-SENet architecture by introducing MiniGAN, a generative adversarial network in the time-frequency domain. It features an encoder-decoder structure with residual connections, conformers, and parallel processing of signal magnitude and phase. We employ data augmentation techniques in training, investigate the impact of various loss terms, and examine architectural alterations to achieve lower operational costs without compromising performance. Our results on the VoiceBank+DEMAND evaluation set report that MiniGAN achieves competitive figures in objective metrics, obtaining a PESQ of 2.95, while maintaining low latency and reducing computational complexity. The suggested MiniGAN system is ideally suited for real-time applications on resource-constrained devices, as it achieves a real-time factor of 0.24 and has a mere 373k parameters.</p>
 
-<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
-	<div class="text-center"> ==$0
-	<h1>MiniGAN</h1>
-        <h3>Towards an Efficient and Accurate Speech Enhancement by a Comprehensive Ablation Study</h3>
-				Paper: <a href="link">link</a>
-	</div>
-	<p>
-        <b>Abstract.</b> 
-		    In the recent years, significant advancements in speech enhancement have been made through phase reconstruction, dual-branch methodologies or attention mechanisms. These methods produce exceptional results but at expenses of a high computational budget. This work aims to enhance the efficiency of the MP-SENet architecture by introducing MiniGAN, a generative adversarial network in the time-frequency domain. It features an encoder-decoder structure with residual connections, conformers, and parallel processing of signal magnitude and phase. We employ data augmentation techniques in training, investigate the impact of various loss terms, and examine architectural alterations to achieve lower operational costs without compromising performance. Our results on the VoiceBank+DEMAND evaluation set report that MiniGAN achieves competitive figures in objective metrics, obtaining a PESQ of 2.95, while maintaining low latency and reducing the computational complexity. The suggested MiniGAN system is ideally suited for real-time applications on resource-constrained devices, as it achieves a real-time factor of 0.24 and has a mere 373k parameters.
+                    <p>Official demo page: <a href="https://lidiaabad.github.io/">https://lidiaabad.github.io</a></p>
+                    <p>My implementation: <a href="https://github.com/lifeiteng/vall-e">https://github.com/lifeiteng/vall-e</a></p>
+                </div>
 
-    </p>
+                <div class="bg-white">
+                    <h2 id="model-overview" style="text-align: center;">Model Structure</h2>
+                    <p style="text-align: center;">
+                        <img src="./miniganstructure.png" alt="MiniGAN Structure">
+                    </p>
+                    <p>Overview of MiniGAN structure</p>
+                </div>
 
-		<br>
-		official demo page: <a href="https://lidiaabad.github.io/">https://lidiaabad.github.io</a>
-		<br>
-
-		<br>
-		my implementation: <a href="https://github.com/lifeiteng/vall-e">https://github.com/lifeiteng/vall-e</a>
-		<br><br>
-		This page is only to show the .
-		<br><br>
-
-
-<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">		
-	<h2 id="model-overview" style="text-align: center;">Model Structure</h2>
-	<body>
-	<p style="text-align: center;">
-		<img src="./miniganstructure.pdf" height="400" width="800">
-	</p>
-	</body>
-		<p>
-		Overview of MiniGAN structure
-		</p>
-</div>
-
-<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
-	<h2 id="ljspeech-samples" style="text-align: center;">LJSpeech Samples</h2>
-		<div class="table-responsive pt-3">
-			<table class="table table-hover pt-2">
-			<thead>
-			<tr>
-			<th style="text-align: center">Text</th>
-			<th style="text-align: center">Speaker Prompt</th>
-			<th style="text-align: center">Ground Truth</th>
-			<th style="text-align: center">LJSpeech Model</th>
-			</tr>
-			</thead>
-			<tbody>
-			<tr><td style="text-align: left;vertical-align:middle;width: 600px">In addition, the proposed legislation will insure.</td>
-			<td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audios/ljspeech/LJ049-0185_24K.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-			<td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audios/ljspeech/LJ049-0124_24K.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-			<td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audios/ljspeech/LJ049-0185_24K_prompted_libritts.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-			</tr>
-			<tr>
-			<td style="text-align: left;vertical-align:middle;width: 500px">During the period the Commission was giving thought to this situation,</td>
-			<td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audios/ljspeech/LJ049-0124_24K.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-			<td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audios/ljspeech/LJ049-0185_24K.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-			<td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audios/ljspeech/LJ049-0124_24K_prompted_libritts.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-			</tr>
-			</tbody>
-			</table>
-		</div>
-</div>
-
-
-</article>
-</main>
-</div>
-
+                <div class="bg-white">
+                    <h2 id="ljspeech-samples" style="text-align: center;">LJSpeech Samples</h2>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th style="text-align: center">Text</th>
+                                    <th style="text-align: center">Speaker Prompt</th>
+                                    <th style="text-align: center">Ground Truth</th>
+                                    <th style="text-align: center">LJSpeech Model</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="text-align: left;">In addition, the proposed legislation will insure.</td>
+                                    <td style="text-align: center">
+                                        <audio controls><source src="audios/ljspeech/LJ049-0185_24K.wav" /></audio>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <audio controls><source src="audios/ljspeech/LJ049-0124_24K.wav" /></audio>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <audio controls><source src="audios/ljspeech/LJ049-0185_24K_prompted_libritts.wav" /></audio>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left;">During the period the Commission was giving thought to this situation,</td>
+                                    <td style="text-align: center">
+                                        <audio controls><source src="audios/ljspeech/LJ049-0124_24K.wav" /></audio>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <audio controls><source src="audios/ljspeech/LJ049-0185_24K.wav" /></audio>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <audio controls><source src="audios/ljspeech/LJ049-0124_24K_prompted_libritts.wav" /></audio>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
 </body>
+
 </html>
