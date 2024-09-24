@@ -31,25 +31,24 @@
             padding: 20px 0;
         }
 
-        h1, h2, h3 {
-            margin-bottom: 20px;
-        }
-
         h1 {
-            font-size: 2.5em;
+            font-size: 2em; /* Reduced size */
+            margin-bottom: 10px;
         }
 
         h2 {
-            font-size: 2em;
+            font-size: 1.8em; /* Reduced size */
+            margin-bottom: 15px;
         }
 
         h3 {
-            font-size: 1.5em;
+            font-size: 1.4em; /* Reduced size */
+            margin-bottom: 15px;
         }
 
         p {
-            line-height: 1.6;
-            margin-bottom: 15px;
+            line-height: 1.5;
+            margin-bottom: 10px; /* Reduced bottom margin */
         }
 
         table {
@@ -107,35 +106,32 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th style="text-align: center">Text</th>
-                                    <th style="text-align: center">Speaker Prompt</th>
-                                    <th style="text-align: center">Ground Truth</th>
-                                    <th style="text-align: center">LJSpeech Model</th>
+                                    <th style="text-align: center">Noisy</th>
+                                    <th style="text-align: center">MiniGAN</th>
+                                    <th style="text-align: center">MiniGAN-ed</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td style="text-align: left;">In addition, the proposed legislation will insure.</td>
                                     <td style="text-align: center">
                                         <audio controls><source src="audios/ljspeech/LJ049-0185_24K.wav" /></audio>
-                                    </td>
-                                    <td style="text-align: center">
-                                        <audio controls><source src="audios/ljspeech/LJ049-0124_24K.wav" /></audio>
                                     </td>
                                     <td style="text-align: center">
                                         <audio controls><source src="audios/ljspeech/LJ049-0185_24K_prompted_libritts.wav" /></audio>
                                     </td>
+                                    <td style="text-align: center">
+                                        <audio controls><source src="audios/ljspeech/LJ049-0185_24K_minigan-ed.wav" /></audio> <!-- Adjust this source -->
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td style="text-align: left;">During the period the Commission was giving thought to this situation,</td>
                                     <td style="text-align: center">
                                         <audio controls><source src="audios/ljspeech/LJ049-0124_24K.wav" /></audio>
                                     </td>
                                     <td style="text-align: center">
-                                        <audio controls><source src="audios/ljspeech/LJ049-0185_24K.wav" /></audio>
+                                        <audio controls><source src="audios/ljspeech/LJ049-0124_24K_prompted_libritts.wav" /></audio>
                                     </td>
                                     <td style="text-align: center">
-                                        <audio controls><source src="audios/ljspeech/LJ049-0124_24K_prompted_libritts.wav" /></audio>
+                                        <audio controls><source src="audios/ljspeech/LJ049-0124_24K_minigan-ed.wav" /></audio> <!-- Adjust this source -->
                                     </td>
                                 </tr>
                             </tbody>
@@ -145,6 +141,10 @@
             </article>
         </main>
     </div>
+</body>
+
+</html>
+
 </body>
 
 </html>
