@@ -25,19 +25,14 @@
 
 <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
 	<div class="text-center">
-	<h1>VALL-E</h1>
-        <h3>Neural Codec Language Models are Zero-Shot Text to Speech Synthesizers</h3>
-				Paper: <a href="https://arxiv.org/abs/2301.02111">https://arxiv.org/abs/2301.02111</a>
+	<h1>MiniGAN</h1>
+        <h3>Towards an Efficient and Accurate Speech Enhancement by a Comprehensive Ablation Study</h3>
+				Paper: <a href="link">link</a>
 	</div>
 	<p>
         <b>Abstract.</b> 
-		We introduce a language modeling approach for text to speech synthesis (TTS). 
-		Specifically, we train a neural codec language model (called VALL-E) using discrete codes derived from an off-the-shelf neural audio codec model, 
-		and regard TTS as a conditional language modeling task rather than continuous signal regression as in previous work.
-		During the pre-training stage, we scale up the TTS training data to 60K hours of English speech which is hundreds of times larger than existing systems.
-		VALL-E emerges in-context learning capabilities and can be used to synthesize high-quality personalized speech with only a 3-second enrolled recording of an unseen speaker as an acoustic prompt. 
-		Experiment results show that VALL-E significantly outperforms the state-of-the-art zero-shot TTS system  in terms of speech naturalness and speaker similarity. 
-		In addition, we find VALL-E could preserve the speaker's emotion and acoustic environment of the acoustic prompt in synthesis.
+		    In the recent years, significant advancements in speech enhancement have been made through phase reconstruction, dual-branch methodologies or attention mechanisms. These methods produce exceptional results but at expenses of a high computational budget. This work aims to enhance the efficiency of the MP-SENet architecture by introducing MiniGAN, a generative adversarial network in the time-frequency domain. It features an encoder-decoder structure with residual connections, conformers, and parallel processing of signal magnitude and phase. We employ data augmentation techniques in training, investigate the impact of various loss terms, and examine architectural alterations to achieve lower operational costs without compromising performance. Our results on the VoiceBank+DEMAND evaluation set report that MiniGAN achieves competitive figures in objective metrics, obtaining a PESQ of 2.95, while maintaining low latency and reducing the computational complexity. The suggested MiniGAN system is ideally suited for real-time applications on resource-constrained devices, as it achieves a real-time factor of 0.24 and has a mere 373k parameters.
+
     </p>
 
 		<br>
