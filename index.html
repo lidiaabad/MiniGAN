@@ -25,15 +25,14 @@
 
 <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
 	<div class="text-center">
-            <h1>MiniGAN</h1>
+ 	<h1>MiniGAN</h1>
             <h3>Towards an Efficient and Accurate Speech Enhancement by a Comprehensive Ablation Study</h3>
-            <p>Paper: <a href="link">link</a></p>
-        </header>
-    </div>
-    <p>
-        <b>Abstract.</b>0 
-        In recent years, significant advancements in speech enhancement have been made through phase reconstruction, dual-branch methodologies, or attention mechanisms. These methods produce exceptional results but at the expense of a high computational budget. This work aims to enhance the efficiency of the MP-SENet architecture by introducing MiniGAN, a generative adversarial network in the time-frequency domain. It features an encoder-decoder structure with residual connections, conformers, and parallel processing of signal magnitude and phase. We employ data augmentation techniques in training, investigate the impact of various loss terms, and examine architectural alterations to achieve lower operational costs without compromising performance. Our results on the VoiceBank+DEMAND evaluation set report that MiniGAN achieves competitive figures in objective metrics, obtaining a PESQ of 2.95, while maintaining low latency and reducing computational complexity. The suggested MiniGAN system is ideally suited for real-time applications on resource-constrained devices, as it achieves a real-time factor of 0.24 and has a mere 373k parameters.</p>
-    </p>
+            Paper: <a href="link">link</a>
+    	</div>
+   	 <p>
+        	<b>Abstract.</b>0 
+        	In recent years, significant advancements in speech enhancement have been made through phase reconstruction, dual-branch methodologies, or attention mechanisms. These methods produce exceptional results but at the expense of a high computational budget. This work aims to enhance the efficiency of the MP-SENet architecture by introducing MiniGAN, a generative adversarial network in the time-frequency domain. It features an encoder-decoder structure with residual connections, conformers, and parallel processing of signal magnitude and phase. We employ data augmentation techniques in training, investigate the impact of various loss terms, and examine architectural alterations to achieve lower operational costs without compromising performance. Our results on the VoiceBank+DEMAND evaluation set report that MiniGAN achieves competitive figures in objective metrics, obtaining a PESQ of 2.95, while maintaining low latency and reducing computational complexity. The suggested MiniGAN system is ideally suited for real-time applications on resource-constrained devices, as it achieves a real-time factor of 0.24 and has a mere 373k parameters.</p>
+    	</p>
 
 	<br>
 	official demo page: <a href="https://valle-demo.github.io/">https://valle-demo.github.io</a>
@@ -42,58 +41,134 @@
 	<br>
 	my implementation: <a href="https://github.com/lifeiteng/vall-e">https://github.com/lifeiteng/vall-e</a>
 	<br><br>
+</div>
 
-        <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">	
-            <h2 id="model-overview" style="text-align: center;">Model Structure</h2>
-            <body>
-                <p style="text-align: center;">
-                         <img src="miniganstructure.pdf" height="400" width="800">
-                    </p>
-                </body>
-                    <p>The model consists of a generator and a discriminator. The noisy signal magnitude and phase are obtained in TF domain after performing the STFT. The generator employs as input the concatenated magnitude and phase, which are estimated from the noisy signal. In the latent space of the generator, two conformers are placed: one focuses on the time and the other on the frequency features. They are followed by two decoders used for parallel processing of the magnitude and phase of the noisy signal. The magnitude mask decoder outputs a mask that is applied to the noisy signal magnitude, obtaining the enhanced signal magnitude. Finally, by means of the phase and magnitude of the enhanced signal, the enhanced audio is reconstructed in time domain through the Inverse Short Time Fourier Transform (ISTFT).</p>
-                </div>
 
-                <div class="container pt-5 mt-5 p-5 mb-5 bg-white rounded">
-                    <h2 id="audiosamples" style="text-align: center;">Audio Samples</h2>
-                    <div class="table-responsive">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th style="text-align: center">Noisy</th>
-                                    <th style="text-align: center">MiniGAN</th>
-                                    <th style="text-align: center">MiniGAN-ed</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td style="text-align: center">
-                                        <audio controls><source src="audios/ljspeech/LJ049-0185_24K.wav" /></audio>
-                                    </td>
-                                    <td style="text-align: center">
-                                        <audio controls><source src="audios/ljspeech/LJ049-0185_24K_prompted_libritts.wav" /></audio>
-                                    </td>
-                                    <td style="text-align: center">
-                                        <audio controls><source src="audios/ljspeech/LJ049-0185_24K_minigan-ed.wav" /></audio> <!-- Adjust this source -->
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="text-align: center">
-                                        <audio controls><source src="audios/ljspeech/LJ049-0124_24K.wav" /></audio>
-                                    </td>
-                                    <td style="text-align: center">
-                                        <audio controls><source src="audios/ljspeech/LJ049-0124_24K_prompted_libritts.wav" /></audio>
-                                    </td>
-                                    <td style="text-align: center">
-                                        <audio controls><source src="audios/ljspeech/LJ049-0124_24K_minigan-ed.wav" /></audio> <!-- Adjust this source -->
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </article>
-        </main>
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">	
+	<h2 id="model-overview" style="text-align: center;">Model Structure</h2>
+        <body>
+        <p style="text-align: center;">
+        	<img src="miniganstructure.pdf" height="400" width="800">
+        </p>
+        </body>
+        	<p>The model consists of a generator and a discriminator. The noisy signal magnitude and phase are obtained in TF domain after performing the STFT. The generator employs as input the concatenated magnitude and phase, which are estimated from the noisy signal. In the latent space of the generator, two conformers are placed: one focuses on the time and the other on the frequency features. They are followed by two decoders used for parallel processing of the magnitude and phase of the noisy signal. The magnitude mask decoder outputs a mask that is applied to the noisy signal magnitude, obtaining the enhanced signal magnitude. Finally, by means of the phase and magnitude of the enhanced signal, the enhanced audio is reconstructed in time domain through the Inverse Short Time Fourier Transform (ISTFT).</p>
+</div>
+
+<div class="container pt-5 mt-5 p-5 mb-5 bg-white rounded">
+    <h2 id="audiosamples" style="text-align: center;">Audio Samples</h2>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th style="text-align: center">Noisy</th>
+                    <th style="text-align: center">Clean</th>
+                    <th style="text-align: center">MiniGAN</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/LJ049-0185_24K.wav" />
+                        </audio>
+                    </td>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/LJ049-0185_24K_prompted_libritts.wav" />
+                        </audio>
+                    </td>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/LJ049-0185_24K_minigan-ed.wav" />
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/LJ049-0124_24K.wav" />
+                        </audio>
+                    </td>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/LJ049-0124_24K_prompted_libritts.wav" />
+                        </audio>
+                    </td>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/LJ049-0124_24K_minigan-ed.wav" />
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center">Noisy</td>
+                    <td style="text-align: center">Clean</td>
+                    <td style="text-align: center">MiniGAN</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/noisy_sample_1.wav" />
+                        </audio>
+                    </td>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/clean_sample_1.wav" />
+                        </audio>
+                    </td>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/minigan_sample_1.wav" />
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center">MiniGAN-FT</td>
+                    <td style="text-align: center">MiniGAN-48</td>
+                    <td style="text-align: center">MiniGAN-NDA</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/minigan_ft_sample.wav" />
+                        </audio>
+                    </td>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/minigan_48_sample.wav" />
+                        </audio>
+                    </td>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/minigan_nda_sample.wav" />
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center">MiniGAN-WN</td>
+                    <td style="text-align: center">MiniGAN-ED</td>
+                    <td style="text-align: center"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/minigan_wn_sample.wav" />
+                        </audio>
+                    </td>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/minigan_ed_sample.wav" />
+                        </audio>
+                    </td>
+                    <td style="text-align: center"></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+</div>
+</article>
+</main>
+</div>
 </body>
 </html>
 
