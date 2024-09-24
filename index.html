@@ -34,7 +34,7 @@
                 <div class="bg-white">
                     <h2 id="model-overview" style="text-align: center;">Model Structure</h2>
                     <p style="text-align: center;">
-                         <img src="miniganstructure.png" height="400" width="800">
+                         <img src="miniganstructure.pdf" height="400" width="800">
                     </p>
                     <p>The model consists of a generator and a discriminator. The noisy signal magnitude and phase are obtained in TF domain after performing the STFT. The generator employs as input the concatenated magnitude and phase, which are estimated from the noisy signal. In the latent space of the generator, two conformers are placed: one focuses on the time and the other on the frequency features. They are followed by two decoders used for parallel processing of the magnitude and phase of the noisy signal. The magnitude mask decoder outputs a mask that is applied to the noisy signal magnitude, obtaining the enhanced signal magnitude. Finally, by means of the phase and magnitude of the enhanced signal, the enhanced audio is reconstructed in time domain through the Inverse Short Time Fourier Transform (ISTFT).</p>
                 </div>
