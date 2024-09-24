@@ -48,7 +48,7 @@
 	<h2 id="model-overview" style="text-align: center;">Model Structure</h2>
         <body>
         <p style="text-align: center;">
-        	<img src="miniganstructure.png" height="400" width="800">
+        	<img src="miniganstructure.png">
         </p>
         </body>
         	<p>The model consists of a generator and a discriminator. The noisy signal magnitude and phase are obtained in TF domain after performing the STFT. The generator employs as input the concatenated magnitude and phase, which are estimated from the noisy signal. In the latent space of the generator, two conformers are placed: one focuses on the time and the other on the frequency features. They are followed by two decoders used for parallel processing of the magnitude and phase of the noisy signal. The magnitude mask decoder outputs a mask that is applied to the noisy signal magnitude, obtaining the enhanced signal magnitude. Finally, by means of the phase and magnitude of the enhanced signal, the enhanced audio is reconstructed in time domain through the Inverse Short Time Fourier Transform (ISTFT).</p>
@@ -60,16 +60,34 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th style="text-align: center">Noisy</th>
-                    <th style="text-align: center">Clean</th>
-                    <th style="text-align: center">MiniGAN</th>
+                    <th style="text-align: center"></th>
+                    <th style="text-align: center">Audio 1</th>
+                    <th style="text-align: center">Audio 2</th>
+                    <th style="text-align: center">Audio 3</th>
                 </tr>
-            </thead>
-            <tbody>
                 <tr>
+                    <th style="text-align: center">Noisy</th>
                     <td style="text-align: center">
                         <audio controls>
                             <source src="audios/ljspeech/LJ049-0185_24K.wav" />
+                        </audio>
+                    </td>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/LJ049-0185_24K.wav" />
+                        </audio>
+                    </td>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/LJ049-0185_24K.wav" />
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="text-align: center">Clean</th>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/LJ049-0185_24K_prompted_libritts.wav" />
                         </audio>
                     </td>
                     <td style="text-align: center">
@@ -79,58 +97,51 @@
                     </td>
                     <td style="text-align: center">
                         <audio controls>
+                            <source src="audios/ljspeech/LJ049-0185_24K_prompted_libritts.wav" />
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="text-align: center">MiniGAN</th>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/LJ049-0185_24K_minigan-ed.wav" />
+                        </audio>
+                    </td>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/LJ049-0185_24K_minigan-ed.wav" />
+                        </audio>
+                    </td>
+                    <td style="text-align: center">
+                        <audio controls>
                             <source src="audios/ljspeech/LJ049-0185_24K_minigan-ed.wav" />
                         </audio>
                     </td>
                 </tr>
                 <tr>
-                    <td style="text-align: center">
-                        <audio controls>
-                            <source src="audios/ljspeech/LJ049-0124_24K.wav" />
-                        </audio>
-                    </td>
-                    <td style="text-align: center">
-                        <audio controls>
-                            <source src="audios/ljspeech/LJ049-0124_24K_prompted_libritts.wav" />
-                        </audio>
-                    </td>
-                    <td style="text-align: center">
-                        <audio controls>
-                            <source src="audios/ljspeech/LJ049-0124_24K_minigan-ed.wav" />
-                        </audio>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="text-align: center">Noisy</td>
-                    <td style="text-align: center">Clean</td>
-                    <td style="text-align: center">MiniGAN</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center">
-                        <audio controls>
-                            <source src="audios/ljspeech/noisy_sample_1.wav" />
-                        </audio>
-                    </td>
-                    <td style="text-align: center">
-                        <audio controls>
-                            <source src="audios/ljspeech/clean_sample_1.wav" />
-                        </audio>
-                    </td>
-                    <td style="text-align: center">
-                        <audio controls>
-                            <source src="audios/ljspeech/minigan_sample_1.wav" />
-                        </audio>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="text-align: center">MiniGAN-FT</td>
-                    <td style="text-align: center">MiniGAN-48</td>
-                    <td style="text-align: center">MiniGAN-NDA</td>
-                </tr>
-                <tr>
+                    <th style="text-align: center">MiniGAN-FT</th>
                     <td style="text-align: center">
                         <audio controls>
                             <source src="audios/ljspeech/minigan_ft_sample.wav" />
+                        </audio>
+                    </td>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/minigan_ft_sample.wav" />
+                        </audio>
+                    </td>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/minigan_ft_sample.wav" />
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="text-align: center">MiniGAN-48</th>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/minigan_48_sample.wav" />
                         </audio>
                     </td>
                     <td style="text-align: center">
@@ -140,16 +151,30 @@
                     </td>
                     <td style="text-align: center">
                         <audio controls>
+                            <source src="audios/ljspeech/minigan_48_sample.wav" />
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="text-align: center">MiniGAN-NDA</th>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/minigan_nda_sample.wav" />
+                        </audio>
+                    </td>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/minigan_nda_sample.wav" />
+                        </audio>
+                    </td>
+                    <td style="text-align: center">
+                        <audio controls>
                             <source src="audios/ljspeech/minigan_nda_sample.wav" />
                         </audio>
                     </td>
                 </tr>
                 <tr>
-                    <td style="text-align: center">MiniGAN-WN</td>
-                    <td style="text-align: center">MiniGAN-ED</td>
-                    <td style="text-align: center"></td>
-                </tr>
-                <tr>
+                    <th style="text-align: center">MiniGAN-WN</th>
                     <td style="text-align: center">
                         <audio controls>
                             <source src="audios/ljspeech/minigan_wn_sample.wav" />
@@ -157,15 +182,38 @@
                     </td>
                     <td style="text-align: center">
                         <audio controls>
+                            <source src="audios/ljspeech/minigan_wn_sample.wav" />
+                        </audio>
+                    </td>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/minigan_wn_sample.wav" />
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="text-align: center">MiniGAN-ED</th>
+                    <td style="text-align: center">
+                        <audio controls>
                             <source src="audios/ljspeech/minigan_ed_sample.wav" />
                         </audio>
                     </td>
-                    <td style="text-align: center"></td>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/minigan_ed_sample.wav" />
+                        </audio>
+                    </td>
+                    <td style="text-align: center">
+                        <audio controls>
+                            <source src="audios/ljspeech/minigan_ed_sample.wav" />
+                        </audio>
+                    </td>
                 </tr>
             </tbody>
         </table>
     </div>
 </div>
+
 </article>
 </main>
 </div>
