@@ -57,7 +57,7 @@
         	<p>The model consists of a generator and a discriminator. The noisy signal magnitude and phase are obtained in TF domain after performing the STFT. The generator employs as input the concatenated magnitude and phase, which are estimated from the noisy signal. In the latent space of the generator, two conformers are placed: one focuses on the time and the other on the frequency features. They are followed by two decoders used for parallel processing of the magnitude and phase of the noisy signal. The magnitude mask decoder outputs a mask that is applied to the noisy signal magnitude, obtaining the enhanced signal magnitude. Finally, by means of the phase and magnitude of the enhanced signal, the enhanced audio is reconstructed in time domain through the Inverse Short Time Fourier Transform (ISTFT).</p>
 </div>
 
-<div class="container pt-5 mt-5 p-5 mb-5 bg-white rounded">
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
     <h2 id="audiosamples" style="text-align: center;">Audio Samples</h2>
 	</body>
         	<p>Audio samples for the models developed in our work. Two samples from the VoiceBank+DEMAND public dataset (VB+D Audio 1 and VB+D Audio 2) and an audio recorded to test our models on different speaker and noise (Non VB+D Audio). Non clean version of the last audio is given as the noisy audio is not synthetic.</p>
