@@ -27,8 +27,9 @@
 	<div class="text-center">
  	<h1>MiniGAN</h1>
             <h3>Towards an Efficient and Accurate Speech Enhancement by a Comprehensive Ablation Study</h3>
-		Authors: Lidia Abad, Fernando López, Jordi Luque
-            Paper: <a href="link">link</a>
+		Authors: Lidia Abad, Fernando López, Jordi Luque.
+            	
+		Paper: <a href="link">link</a>
     	</div>
    	 <p>
         	<b>Abstract.</b>
@@ -49,7 +50,7 @@
 	<h2 id="model-overview" style="text-align: center;">Model Structure</h2>
         <body>
         <p style="text-align: center;">
-        	<img src="miniganstructure.png" height="200" width="800">
+        	<img src="miniganstructure.png" height="300" width="1200">
         </p>
         </body>
         	<p>The model consists of a generator and a discriminator. The noisy signal magnitude and phase are obtained in TF domain after performing the STFT. The generator employs as input the concatenated magnitude and phase, which are estimated from the noisy signal. In the latent space of the generator, two conformers are placed: one focuses on the time and the other on the frequency features. They are followed by two decoders used for parallel processing of the magnitude and phase of the noisy signal. The magnitude mask decoder outputs a mask that is applied to the noisy signal magnitude, obtaining the enhanced signal magnitude. Finally, by means of the phase and magnitude of the enhanced signal, the enhanced audio is reconstructed in time domain through the Inverse Short Time Fourier Transform (ISTFT).</p>
